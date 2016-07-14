@@ -59,16 +59,16 @@ void Hth::StartHora()
     QString Hora , Minutos; //Path;
     //Path=QCoreApplication::applicationDirPath().toLatin1();
 
-    Hora= "HRS" + playTime.toString("hh")+ QString(".mp3").toLower();  //obtenemos fichero de hora
-    Minutos ="MIN" + playTime.toString("mm")+ QString(".mp3").toLower();  //obtenemos fichero de minutos
+    Hora= "HRS" + playTime.toString("hh")+("mm")+ QString(".mp3").toLower();  //obtenemos fichero de hora
+/**    Minutos ="MIN" + playTime.toString("mm")+ QString(".mp3").toLower();  //obtenemos fichero de minutos
 
-    //time point
-    if (playTime.minute() == 0)
-    {
-        Hora= "HRS" + playTime.toString("hh")+ "_O" + QString(".mp3").toLower(); //obtenemos fichero hora en punto añadiendo _O
-        IsMFinal=true; //evita decir minutos
-    }
-
+*    //time point
+*    if (playTime.minute() == 0)
+*    {
+*        Hora= "HRS" + playTime.toString("hh")+ "_O" + QString(".mp3").toLower(); //obtenemos fichero hora en punto aÃ±adiendo _O
+*        IsMFinal=true; //evita decir minutos
+*    }
+*/
     if(!IsHFinal)//si no se ha reprodcido la hora
     {
         IsHFinal = true;
@@ -144,7 +144,7 @@ void Hth::Update()
         {
             if(IsMFinal)// primero comprobamos los minutos, si es el final de los minutos
             {
-                emit Finish();         // Se reproducieros las hora y mandamos la señal de final
+                emit Finish();         // Se reproducieros las hora y mandamos la seÃ±al de final
                 IsHora=false;
                 return;
             }
